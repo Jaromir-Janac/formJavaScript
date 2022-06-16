@@ -3,7 +3,6 @@
 $('.navbar-nav>li>a').on('click', function(){
     $('.navbar-collapse').collapse('hide');
 });
-
 // Initialize Date
 function dateStart (){
     let d=new Date();
@@ -51,20 +50,25 @@ function calculatePrice () {
     if (aI) {
         result += (basicPrice * 0.50)
     }
-    
-    document.getElementById("outputPrice").value = result + " Kč"
 
+
+    document.getElementById("outputPrice").value = result + " Kč"
+    
 }
 
 function budget (){
     let price = document.getElementById("outputPrice").value
     let bdg = document.getElementById("inputBudget").value
+    bdg = parseInt(bdg)
+    price = parseInt(price)
+    
+    console.log(bdg)
     if (bdg >= price) {
-        document.getElementById("checkBudget").value="Váš rozpočet je dostatečný"
+        document.getElementById("checkBudget").value="Your budget is sufficient"
         document.getElementById("checkBudget").style.backgroundColor="lightgreen"
     }
     else {
-        document.getElementById("checkBudget").value="Váš rozpočet není dostatečný"
+        document.getElementById("checkBudget").value="Your budget is insufficient"
         document.getElementById("checkBudget").style.backgroundColor="lightcoral"
     }
 }

@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Janáč Bootstrap-Hotel</title>
+    <title>Janáč JavaScriptForm</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -17,7 +17,7 @@
 </head>
 
 <body id="formRez" onload="dateStart(); dateEnd()">
-
+<div class="mx-xl-5">
     <!-- NAVBAR -->
     <nav class="navbar navbar-expand-md bg-light sticky-top">
         <div class="container-fluid">
@@ -33,27 +33,23 @@
                 <ul class="navbar-nav">
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page"
-                            href="../bootstrapHotel/hotel.html#showcase">Domů</a>
+                            href="../bootstrapHotel/hotel.html#showcase">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#formRez">Rezervace</a>
+                        <a class="nav-link active" aria-current="page" href="#formRez">Reservation</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="../bootstrapHotel/hotel.html#history">Historie</a>
+                        <a class="nav-link" href="../bootstrapHotel/hotel.html#history">History</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="../bootstrapHotel/hotel.html#pricing">Ceník</a>
+                        <a class="nav-link" href="../bootstrapHotel/hotel.html#pricing">Pricing</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="../bootstrapHotel/hotel.html#gallery">Galerie</a>
+                        <a class="nav-link" href="../bootstrapHotel/hotel.html#gallery">Gallery</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="../bootstrapHotel/hotel.html#contacts">Kontakty</a>
+                        <a class="nav-link" href="../bootstrapHotel/hotel.html#contacts">Contacts</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="../bootstrapHotel/hotel.htmlicon.html">Icon</a>
-                    </li>
-
                 </ul>
             </div>
         </div>
@@ -67,28 +63,27 @@
                 <form class="formRezervace">
 
 
-                    <h3>Rezervační formulář</h3>
+                    <h3>Reservation form</h3>
                     <div class="row">
 
-                        <label for="inputName" class="col-sm-4 col-md-3 col-lg-2 col-xl-2 col-form-label">Jméno a
-                            Příjmení:</label>
+                        <label for="inputName" class="col-sm-4 col-md-3 col-lg-2 col-xl-2 col-form-label">Name and Surname:</label>
                         <div class="col-sm-8 col-md-9 col-lg-10 col-xl-3">
-                            <input type="name" class="form-control" id="inputName" placeholder="Jméno Příjmení">
+                            <input type="name" class="form-control" id="inputName" placeholder="Name Surname">
                         </div>
 
 
                         <label for="inputEmail"
                             class="col-sm-4 col-md-3 col-lg-2 col-xl-2 col-form-label">E-mail:</label>
                         <div class="col-sm-8 col-md-9 col-lg-10 col-xl-2">
-                            <input type="email" class="form-control" id="inputEmail" placeholder="jmeno@domena.com">
+                            <input type="email" class="form-control" id="inputEmail" placeholder="name@domain.com">
 
                         </div>
 
 
                         <label for="inputTel"
-                            class="col-sm-4 col-md-3 col-lg-2 col-xl-1 col-form-label">Telefon:</label>
+                            class="col-sm-4 col-md-3 col-lg-2 col-xl-1 col-form-label">Phone:</label>
                         <div class="col-sm-8 col-md-9 col-lg-10 col-xl-2">
-                            <input type="text" class="form-control" id="inputTel" placeholder="+420 ">
+                            <input type="text" class="form-control" id="inputTel" placeholder="+xxx xxx xxx">
 
                         </div>
                     </div>
@@ -97,22 +92,20 @@
                     <div class="row">
 
 
-                        <label for="inputRoom" class="col-sm-4 col-md-3 col-lg-2 col-xl-2 col-form-label">Typ
-                            pokoje:</label>
+                        <label for="inputRoom" class="col-sm-4 col-md-3 col-lg-2 col-xl-2 col-form-label">Room type:</label>
                         <div class="col-sm-8 col-md-3 col-lg-4 col-xl-4">
                             <select class="form-select" onchange="calculatePrice()" id="inputRoom"
                                 aria-label="TypPokoje">
-                                <option selected>Typ pokoje</option>
-                                <option value="1000">Jednolůžkový</option>
-                                <option value="2000">Manželský</option>
-                                <option value="3000">Luxusní</option>
-                                <option value="5000">Historický</option>
+                                <option value="0" selected>Room type</option>
+                                <option value="1000">Single bed</option>
+                                <option value="2000">Double bed</option>
+                                <option value="3000">Luxury</option>
+                                <option value="5000">Antique</option>
                             </select>
                         </div>
 
 
-                        <label for="inputPeople" class="col-sm-4 col-md-3 col-lg-2 col-xl-2 col-form-label">Počet
-                            Osob:</label>
+                        <label for="inputPeople" class="col-sm-4 col-md-3 col-lg-2 col-xl-2 col-form-label">Number of Persons:</label>
                         <div class="col-sm-8 col-md-3 col-lg-4 col-xl-4">
                             <select class="form-select d-flex align-items-center" onchange="calculatePrice()"
                                 id="inputPeople" aria-label="PocetOsob">
@@ -125,13 +118,20 @@
 
 
                         <div class="row my-2">
-                            <div class="col-sm-4 col-md-3 col-lg-2">Další Osoby:</div>
+                            <div class="col-sm-4 col-md-3 col-lg-2">Other People:</div>
                             <div class="col-sm-8 col-md-9 col-lg-10">
                                 <div class="row mx-2 mx-sm-3 mx-md-3">
                                     <div class="form-check col-md-4" onchange="calculatePrice()">
                                         <input class="form-check-input" type="checkbox" value="15" id="checkChild">
                                         <label class="form-check-label" for="checkChild">
-                                            &nbsp;+ Dítě
+                                            &nbsp;+ Child
+                                        </label>
+                                    </div>
+                                    <div class="form-check col-md-4">
+                                        <input class="form-check-input" onchange="calculatePrice()" type="checkbox"
+                                            value="50" id="checkElder">
+                                        <label class="form-check-label" for="checkElder">
+                                            &nbsp;+ Elder
                                         </label>
                                     </div>
                                     <div class="form-check col-md-4">
@@ -139,16 +139,10 @@
                                         <input class="form-check-input" onchange="calculatePrice()" type="checkbox"
                                             value="5" id="checkAnimal">
                                         <label class="form-check-label" for="checkAnimal">
-                                            &nbsp;+ Zvíře
+                                            &nbsp;+ Animal
                                         </label>
                                     </div>
-                                    <div class="form-check col-md-4">
-                                        <input class="form-check-input" onchange="calculatePrice()" type="checkbox"
-                                            value="50" id="checkElder">
-                                        <label class="form-check-label" for="checkElder">
-                                            &nbsp;+ Důchodce
-                                        </label>
-                                    </div>
+                                   
                                 </div>
                             </div>
                         </div>
@@ -156,21 +150,21 @@
 
                     </div>
                     <div class="row my-2">
-                        <div class="col-sm-4 col-md-3 col-lg-2">Stravování:</div>
+                        <div class="col-sm-4 col-md-3 col-lg-2">Boarded:</div>
                         <div class="col-sm-8 col-md-9 col-lg-10">
                             <div class="row mx-2">
                                 <div class="form-check col-md-4" id="inputBoard">
                                     <input class="form-check-input" onchange="calculatePrice()" type="radio"
                                         name="exampleRadios" id="halfBoard" value="1" checked>
                                     <label class="form-check-label" for="halfBoard">
-                                        Polo-penze
+                                        Half Board
                                     </label>
                                 </div>
                                 <div class="form-check col-md-4">
                                     <input class="form-check-input" onchange="calculatePrice()" type="radio"
                                         name="exampleRadios" id="fullBoard" value="25">
                                     <label class="form-check-label" for="fullBoard">
-                                        Plná-penze
+                                        Full Board
                                     </label>
                                 </div>
                                 <div class="form-check col-md-4">
@@ -185,7 +179,7 @@
                     </div>
 
                     <div class="row">
-                        <label for="inputDays" class="col-sm-4 col-md-3 col-lg-2 col-form-label">Počet nocí:</label>
+                        <label for="inputDays" class="col-sm-4 col-md-3 col-lg-2 col-form-label">Number of Nights</label>
                         <div class="col-sm-8 col-md-9 col-lg-2">
                             <select class="form-select d-flex align-items-center" onchange="dateEnd(); calculatePrice()"
                                 id="inputDays" aria-label="PocetDni">
@@ -196,11 +190,11 @@
                             </select>
                         </div>
 
-                        <label for="inputDateStart" class="col-sm-4 col-md-3 col-lg-1 col-form-label">Od:</label>
+                        <label for="inputDateStart" class="col-sm-4 col-md-3 col-lg-1 col-form-label">From:</label>
                         <div class="col-sm-8 col-md-4 col-lg-3">
                             <input type="date" onchange="dateEnd()" class="form-control" id="inputDateStart">
                         </div>
-                        <label for="outputDateEnd" class="col-sm-4 col-md-1 col-form-label">Do:</label>
+                        <label for="outputDateEnd" class="col-sm-4 col-md-1 col-form-label">To:</label>
                         <div class="col-sm-8 col-md-4 col-lg-3">
                             <input type="date" class="form-control" id="outputDateEnd" readonly>
 
@@ -208,44 +202,41 @@
                     </div>
 
                     <div class="row">
-                        <label for="outputPrice" class="col-sm-4 col-md-3 col-lg-2 col-form-label">Výsledná
-                            cena:</label>
+                        <label for="outputPrice" class="col-sm-4 col-md-3 col-lg-2 col-form-label">Final Price:</label>
                         <div class="col-sm-8 col-md-9 col-lg-3">
                             <input class="form-control" type="text" value="0 Kč" id="outputPrice"
                                 aria-label="vyslednaCena" readonly>
                         </div>
 
-                        <label for="inputBudget" class="col-sm-4 col-md-3 col-lg-4 col-form-label">Dostupný
-                            rozpočet:</label>
+                        <label for="inputBudget" class="col-sm-4 col-md-3 col-lg-4 col-form-label">Available Budget:</label>
                         <div class="col-sm-8 col-md-9 col-lg-3">
                             <input class="form-control" type="text" id="inputBudget" value="0 Kč">
                         </div>
                         <div class="col-sm-4 col-md-3 col-lg-2"></div>
-                        <div class="d-grid gap-2 col-9 col-sm-4 col-md-4 col-lg-5 mx-auto">
+                        <div class="d-grid gap-2 col-6 col-sm-4 col-md-4 col-lg-5 mx-auto">
                             <a role="button" onclick="budget()"
-                                class="btn btn-primary d-flex align-items-center justify-content-center">Bude to
-                                stačit?</a>
+                                class="btn btn-primary d-flex align-items-center justify-content-center">Will it be enough?</a>
                         </div>
-                        <div class="col-3 col-sm-4 col-md-5 col-lg-5">
+                        <div class="col-6 col-sm-4 col-md-5 col-lg-5">
 
                             <input class="form-control" type="text" value="" id="checkBudget"
                                 aria-label="readonly input example" readonly>
                         </div>
                     </div>
-            
+
 
                     <div class="row">
-                        <label for="inputTextArea" class="col-sm-4 col-md-3 col-lg-2 col-form-label">Poznámky:</label>
+                        <label for="inputTextArea" class="col-sm-4 col-md-3 col-lg-2 col-form-label">Comments:</label>
                         <div class="col-sm-8 col-md-9 col-lg-10">
                             <textarea class="form-control" id="inputComment" rows="4"
-                                placeholder="Případné další požadavky uveďte prosím zde."></textarea>
+                                placeholder="Please specify any additional requirements here."></textarea>
                         </div>
                     </div>
 
                     <div class="row">
                         <div class="col-sm-4 col-md-3 col-lg-2"></div>
                         <div class="d-grid gap-2 mt-1 col-sm-8 col-md-9 col-lg-10">
-                            <button type="submit" class="btn btn-lg btn-primary" id="buttonReserve">Rezervuj</button>
+                            <button type="submit" class="btn btn-lg btn-primary" id="buttonReserve">Reserve</button>
                         </div>
                     </div>
                 </form>
@@ -254,7 +245,7 @@
         </div>
 
     </section>
-
+</div>
 
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js"
         integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk"

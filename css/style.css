@@ -11242,8 +11242,7 @@ body {
 
 .navbar {
   font-weight: 100;
-  min-height: 8vh;
-  background-color: rgba(238, 212, 96, 0.2);
+  height: 80px;
 }
 .navbar .navbar-brand h3, .navbar .navbar-brand .h3 {
   font-weight: 100;
